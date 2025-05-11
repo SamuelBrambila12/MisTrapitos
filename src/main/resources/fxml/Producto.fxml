@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mistrapitos.controllers.ProductoController"
+            styleClass="root"
+            stylesheets="/css/productos.css">
+
+    <top>
+        <VBox spacing="20" styleClass="header-container">
+            <padding>
+                <Insets top="25" right="25" bottom="15" left="25"/>
+            </padding>
+            <children>
+                <HBox spacing="15" alignment="CENTER_LEFT" styleClass="header-card">
+                    <padding>
+                        <Insets top="20" right="25" bottom="20" left="25"/>
+                    </padding>
+                    <children>
+                        <Label text="Gestión de Productos" styleClass="title-label"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Nuevo Producto" onAction="#onNuevoProducto" styleClass="nuevo-producto-btn"/>
+                        <Button text="Nueva Categoría" onAction="#onNuevaCategoria" styleClass="nueva-categoria-btn"/>
+                    </children>
+                </HBox>
+                <HBox spacing="12" alignment="CENTER_LEFT" styleClass="search-container">
+                    <padding>
+                        <Insets top="5" right="5" bottom="5" left="5"/>
+                    </padding>
+                    <children>
+                        <Label text="Buscar:" styleClass="search-label"/>
+                        <TextField fx:id="buscarField" promptText="Nombre del producto o precio igual o mayor"
+                                   HBox.hgrow="ALWAYS" styleClass="search-box"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox styleClass="table-container">
+            <padding>
+                <Insets top="0" right="25" bottom="25" left="25"/>
+            </padding>
+            <children>
+                <TableView fx:id="tablaProductos" prefHeight="450" VBox.vgrow="ALWAYS"
+                           styleClass="productos-table">
+                    <columns>
+                        <TableColumn text="ID" prefWidth="50" fx:id="colId" styleClass="col-id"/>
+                        <TableColumn text="Nombre" prefWidth="150" fx:id="colNombre" styleClass="col-nombre"/>
+                        <TableColumn text="Categoría" prefWidth="120" fx:id="colCategoria" styleClass="col-categoria"/>
+                        <TableColumn text="Precio" prefWidth="80" fx:id="colPrecio" styleClass="col-precio"/>
+                        <TableColumn text="Stock" prefWidth="80" fx:id="colStock" styleClass="col-stock"/>
+                        <TableColumn text="Tallas" prefWidth="100" fx:id="colTallas" styleClass="col-tallas"/>
+                        <TableColumn text="Colores" prefWidth="100" fx:id="colColores" styleClass="col-colores"/>
+                        <TableColumn text="Descuento" prefWidth="80" fx:id="colDescuento" styleClass="col-descuento"/>
+                        <TableColumn text="Acciones" prefWidth="200" fx:id="colAcciones" styleClass="col-acciones"/>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

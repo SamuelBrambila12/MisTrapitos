@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mistrapitos.controllers.VentaController" styleClass="root" stylesheets="/css/ventas.css">
+    <top>
+        <VBox spacing="6">
+            <children>
+                <HBox spacing="12" alignment="CENTER_LEFT" styleClass="card" style="-fx-padding: 12;">
+                    <children>
+                        <Label text="Gestión de ventas" styleClass="title-label"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+
+                    </children>
+                </HBox>
+                <HBox spacing="8" alignment="CENTER_LEFT" style="-fx-padding: 0 0 8 12;">
+                    <children>
+                        <Label text="Buscar:" styleClass="search-label"/>
+                        <TextField fx:id="buscarField" promptText="Cliente o método de pago" styleClass="search-box"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tablaVentas" prefHeight="400">
+            <columns>
+                <TableColumn text="ID" prefWidth="50" fx:id="colId"/>
+                <TableColumn text="Cliente" prefWidth="150" fx:id="colCliente"/>
+                <TableColumn text="Fecha" prefWidth="150" fx:id="colFecha"/>
+                <TableColumn text="Método Pago" prefWidth="120" fx:id="colMetodoPago"/>
+                <TableColumn text="Total" prefWidth="100" fx:id="colTotal"/>
+                <TableColumn text="Acciones" prefWidth="240" fx:id="colAcciones"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

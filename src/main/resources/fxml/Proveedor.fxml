@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mistrapitos.controllers.ProveedorController" styleClass="root" stylesheets="/css/clientes.css">
+    <top>
+        <VBox spacing="6">
+            <children>
+                <HBox spacing="12" alignment="CENTER_LEFT" styleClass="card" style="-fx-padding: 12;">
+                    <children>
+                        <Label text="Gestión de Proveedores" styleClass="title-label"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Nuevo Proveedor" onAction="#onNuevoProveedor" styleClass="nuevo-cliente-btn"/>
+                    </children>
+                </HBox>
+                <HBox spacing="8" alignment="CENTER_LEFT" style="-fx-padding: 0 0 8 12;">
+                    <children>
+                        <Label text="Buscar:" styleClass="search-label"/>
+                        <TextField fx:id="buscarField" promptText="Nombre o producto que vende" styleClass="search-box"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tablaProveedores" prefHeight="400">
+            <columns>
+                <TableColumn text="ID" prefWidth="50" fx:id="colId"/>
+                <TableColumn text="Nombre" prefWidth="150" fx:id="colNombre"/>
+                <TableColumn text="Contacto" prefWidth="120" fx:id="colContacto"/>
+                <TableColumn text="Dirección" prefWidth="180" fx:id="colDireccion"/>
+                <TableColumn text="Teléfono" prefWidth="100" fx:id="colTelefono"/>
+                <TableColumn text="Correo" prefWidth="200" fx:id="colCorreo"/>
+                <!-- Nueva columna para mostrar los productos (texto CSV) -->
+                <TableColumn text="Productos Vendidos" prefWidth="150" fx:id="colProductosVendidos"/>
+                <TableColumn text="Acciones" prefWidth="240" fx:id="colAcciones"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

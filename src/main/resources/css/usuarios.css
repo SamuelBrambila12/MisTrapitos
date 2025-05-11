@@ -1,0 +1,257 @@
+/* Estilos generales */
+.root {
+    -fx-background-color: #f5f7fa;
+    -fx-font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+/* Campo de búsqueda, idéntico al de productos */
+.search-box {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 20px;
+    -fx-padding: 8 16;
+    -fx-prompt-text-fill: #95a5a6;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 1);
+}
+
+.search-box:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.3), 8, 0, 0, 0);
+}
+/* Estilos para tarjetas y contenedores */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 10, 0, 0, 4);
+}
+
+/* Estilos para etiquetas */
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3a8a;
+}
+
+/* Estilos para botones */
+.button {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2563eb;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.3), 8, 0, 0, 2);
+}
+
+.button:pressed {
+    -fx-background-color: #1d4ed8;
+}
+
+/* Estilos para campos de texto */
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.text-field:focused {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.2), 4, 0, 0, 0);
+}
+
+/* Estilos para la tabla */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f1f5f9;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent #e2e8f0 #e2e8f0 transparent;
+    -fx-padding: 8px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+}
+
+.table-view .column-header .label {
+    -fx-alignment: center-left;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+    -fx-padding: 2px 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e0f2fe;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #bfdbfe;
+    -fx-text-fill: #1e3a8a;
+}
+
+/* Estilos base para botones de acción */
+.action-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 6px 10px;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* Botón de edición con diseño mejorado */
+.edit-button {
+    -fx-text-fill: #8e44ad;
+    -fx-graphic-text-gap: 6px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(142, 68, 173, 0.3);
+}
+
+.edit-button:hover {
+    -fx-background-color: rgba(142, 68, 173, 0.15);
+    -fx-effect: dropshadow(gaussian, rgba(142, 68, 173, 0.3), 8, 0, 0, 1);
+    -fx-border-color: rgba(142, 68, 173, 0.5);
+}
+
+.edit-button:pressed {
+    -fx-background-color: rgba(142, 68, 173, 0.25);
+    -fx-effect: innershadow(gaussian, rgba(142, 68, 173, 0.2), 2, 0, 0, 1);
+}
+
+/* Botón de eliminar con diseño mejorado (versión roja) */
+.delete-button {
+    -fx-text-fill: #dc2626;  /* Texto rojo */
+    -fx-graphic-text-gap: 6px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(220,38,38,0.3);
+}
+/* Botón de Nuevo Usuario – mismo estilo que Nuevo Producto */
+.nuevo-usuario-btn {
+    -fx-background-color: linear-gradient(to bottom right, #4caf50, #45a049);
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(76,175,80,0.5), 6, 0, 0, 3);
+    -fx-border-width: 0;
+}
+.search-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #555555;
+}
+
+/* Campo de búsqueda */
+.search-box {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 20px;
+    -fx-padding: 8 16;
+    -fx-prompt-text-fill: #95a5a6;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 1);
+}
+
+.search-box:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.3), 8, 0, 0, 0);
+}
+.nuevo-usuario-btn:hover {
+    -fx-background-color: linear-gradient(to bottom right, #45a049, #388e3c);
+    -fx-effect: dropshadow(three-pass-box, rgba(76,175,80,0.7), 8, 0, 0, 4);
+    -fx-translate-y: -1px;
+}
+
+.nuevo-usuario-btn:pressed {
+    -fx-background-color: #388e3c;
+    -fx-translate-y: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(76,175,80,0.5), 3, 0, 0, 1);
+}
+
+.delete-button:hover {
+    -fx-background-color: rgba(220,38,38,0.15);
+    -fx-effect: dropshadow(gaussian, rgba(220,38,38,0.3), 8, 0, 0, 1);
+    -fx-border-color: rgba(220,38,38,0.5);
+}
+
+.delete-button:pressed {
+    -fx-background-color: rgba(220,38,38,0.25);
+    -fx-effect: innershadow(gaussian, rgba(220,38,38,0.2), 2, 0, 0, 1);
+}
+
+
+/* Mejora para iconos en los botones de acción (si se utilizan) */
+.action-button .icon {
+    -fx-opacity: 0.9;
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+.action-button:hover .icon {
+    -fx-opacity: 1.0;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Estilos para scroll bars */
+.scroll-bar {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 8px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #94a3b8;
+}
+
+/* Estilo para iconos (si se utilizan) */
+.icon {
+    -fx-fill: #64748b;
+}
+
+/* Estilos para mensajes de validación */
+.error-label {
+    -fx-text-fill: #dc2626;
+    -fx-font-size: 12px;
+}
+
+.success-label {
+    -fx-text-fill: #16a34a;
+    -fx-font-size: 12px;
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mistrapitos.controllers.LoginController" styleClass="login-background">
+    <children>
+        <VBox alignment="CENTER" spacing="20.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+            <children>
+                <VBox alignment="CENTER" styleClass="login-card" maxWidth="400" maxHeight="600" spacing="25">
+                    <padding>
+                        <Insets top="30" right="40" bottom="40" left="40" />
+                    </padding>
+                    <children>
+                        <!-- Logo de la tienda -->
+                        <ImageView fitWidth="200" preserveRatio="true" styleClass="logo-image">
+                            <Image url="@/images/logo.jpg" />
+                        </ImageView>
+
+                        <Label text="Mis Trapitos" styleClass="app-title"/>
+                        <Label text="Iniciar Sesión" styleClass="login-title"/>
+
+                        <VBox spacing="15" alignment="CENTER" maxWidth="340">
+                            <children>
+                                <HBox styleClass="input-container">
+                                    <children>
+                                        <Label styleClass="input-icon" text="👤" />
+                                        <TextField fx:id="usuarioField" promptText="Usuario" styleClass="login-field" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+
+                                <HBox styleClass="input-container">
+                                    <children>
+                                        <Label styleClass="input-icon" text="🔒" />
+                                        <PasswordField fx:id="contrasenaField" promptText="Contraseña" styleClass="login-field" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+
+                                <Button fx:id="loginButton" text="INGRESAR" defaultButton="true" onAction="#onLogin" styleClass="login-button"/>
+                                <Label fx:id="errorLabel" styleClass="error-label" visible="false"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+
+                <Label text="© 2025 Mis Trapitos - Todos los derechos reservados" styleClass="copyright-label"/>
+
+                <!-- Botón para cerrar el programa, centrado abajo -->
+                <Button fx:id="cerrarButton" text="Cerrar programa" onAction="#onCerrarPrograma" styleClass="cerrar-programa-button"/>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

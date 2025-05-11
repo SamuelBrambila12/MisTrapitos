@@ -1,0 +1,308 @@
+/* ventaPanel.css */
+
+/* Variables globales */
+* {
+    -fx-primary: #3498db;
+    -fx-primary-dark: #2980b9;
+    -fx-secondary: #2ecc71;
+    -fx-secondary-dark: #27ae60;
+    -fx-light-grey: #ecf0f1;
+    -fx-mid-grey: #bdc3c7;
+    -fx-dark-grey: #7f8c8d;
+    -fx-danger: #e74c3c;
+    -fx-warning: #f39c12;
+    -fx-background: #f8f9fa;
+    -fx-header-bg: #2d3e50;
+    -fx-content-bg: white;
+    /* Se elimina el uso de variable para el radio, se utilizará el valor literal en cada propiedad */
+    -fx-shadow: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}
+
+/* Estilos principales */
+.root {
+    -fx-background-color: -fx-background;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-effect: -fx-shadow;
+    -fx-transition: all 0.2s ease;
+}
+
+.button:hover {
+    -fx-background-color: -fx-primary-dark;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.logout-button {
+    -fx-background-color: -fx-danger;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 5 10;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.logout-button:hover {
+    -fx-background-color: derive(-fx-danger, -10%);
+}
+
+/* Campos de texto */
+.text-field {
+    -fx-padding: 10;
+    -fx-background-radius: 4px;
+    -fx-border-color: -fx-mid-grey;
+    -fx-border-radius: 4px;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.05), 5, 0, 0, 0);
+    -fx-transition: border-color 0.2s ease;
+}
+
+.text-field:focused {
+    -fx-border-color: -fx-primary;
+    -fx-effect: innershadow(gaussian, rgba(52, 152, 219, 0.1), 5, 0, 0, 0);
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-color: -fx-mid-grey;
+    -fx-border-radius: 4px;
+    -fx-padding: 2;
+}
+
+.combo-box:focused {
+    -fx-border-color: -fx-primary;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: -fx-dark-grey;
+}
+
+.combo-box .list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-effect: -fx-shadow;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 8 12;
+    -fx-background-color: white;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: -fx-light-grey;
+}
+
+/* Tabla de carrito */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-mid-grey;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -fx-header-bg;
+    -fx-background-radius: 4px 4px 0 0;
+    -fx-padding: 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 10 15;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent -fx-light-grey transparent;
+    -fx-padding: 2 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: -fx-light-grey;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: derive(-fx-primary, 70%);
+    -fx-text-fill: black;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: derive(-fx-light-grey, -5%);
+}
+
+.table-cell {
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 12 15;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Enfatizar columna de precio y subtotal */
+.table-column.precio, .table-column.subtotal {
+    -fx-alignment: CENTER-RIGHT;
+    -fx-font-weight: bold;
+}
+
+/* Decoración para etiquetas importantes */
+#totalLabel {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-background-color: -fx-light-grey;
+    -fx-background-radius: 4px;
+    -fx-padding: 10 20;
+    -fx-effect: -fx-shadow;
+    -fx-min-width: 150px;
+}
+
+#usuarioLabel {
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}
+
+#productoInfoLabel, #clienteInfoLabel {
+    -fx-font-style: italic;
+    -fx-text-fill: -fx-dark-grey;
+}
+
+#mensajeLabel {
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-background-radius: 4px;
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilos para el overlay de terminal de tarjeta */
+#pagoTarjetaOverlay {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+}
+
+#pagoTarjetaOverlay .vbox {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 5);
+    -fx-padding: 30;
+    -fx-spacing: 20;
+    -fx-max-width: 450px;
+    -fx-max-height: 300px;
+    -fx-alignment: center;
+}
+
+#estadoTerminalLabel {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+#mensajeTerminalLabel {
+    -fx-font-size: 14px;
+    -fx-text-fill: -fx-dark-grey;
+    -fx-text-alignment: center;
+}
+
+.progress-indicator {
+    -fx-progress-color: -fx-secondary;
+}
+
+#cerrarTerminalBtn {
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-min-width: 120px;
+}
+
+#cerrarTerminalBtn:hover {
+    -fx-background-color: -fx-primary-dark;
+}
+
+/* Estilo para botón completar venta */
+#completarVentaBtn {
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+}
+
+#completarVentaBtn:hover {
+    -fx-background-color: -fx-secondary-dark;
+}
+
+/* Estilos para la ventana de consulta de inventario */
+.stat-box {
+    -fx-padding: 10;
+    -fx-spacing: 5;
+    -fx-min-width: 150px;
+}
+
+.stat-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #636e72;
+}
+
+.stat-value {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3e50;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #f0f0f0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #e4e4e4;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+}
+
+.tab .tab-label {
+    -fx-text-fill: #2d3e50;
+}
+
+/* Para resaltar productos con stock bajo */
+.bajo-stock {
+    -fx-background-color: #ffcccc;
+}
+
+/* Responsividad para diferentes tamaños de pantalla */
+@media screen and (max-width: 800) {
+    .root {
+        -fx-font-size: 11px;
+    }
+
+    #totalLabel {
+        -fx-font-size: 20px;
+    }
+}

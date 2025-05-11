@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mistrapitos.controllers.ReporteController"
+            stylesheets="/css/clientes.css"
+            styleClass="root"
+            prefWidth="800" prefHeight="600">
+    <children>
+        <!-- TÍTULO: anclado 10px del top -->
+        <HBox spacing="12"
+              alignment="CENTER_LEFT"
+              styleClass="card"
+              style="-fx-padding: 12;"
+              AnchorPane.topAnchor="10"
+              AnchorPane.leftAnchor="10"
+              AnchorPane.rightAnchor="10">
+            <children>
+                <Label text="Panel de Reportes" styleClass="title-label"/>
+                <Region HBox.hgrow="ALWAYS"/>
+            </children>
+        </HBox>
+
+        <!-- ZONA DE CONTROLES: anclada 60px del top para dejar espacio -->
+        <VBox spacing="10"
+              AnchorPane.topAnchor="80"
+              AnchorPane.leftAnchor="10"
+              AnchorPane.rightAnchor="10"
+              AnchorPane.bottomAnchor="10">
+
+            <!-- Fila principal de controles -->
+            <HBox spacing="10">
+                <VBox spacing="5">
+                    <Label text="Tipo de Reporte:"/>
+                    <ComboBox fx:id="tipoReporteCombo" prefWidth="180"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Formato:"/>
+                    <ComboBox fx:id="formatoCombo" prefWidth="80"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Mes/Año:"/>
+                    <DatePicker fx:id="mesPicker"
+                                promptText="MM/yyyy"
+                                visible="false"
+                                disable="true"/>
+                </VBox>
+                <VBox alignment="BOTTOM_CENTER">
+                    <Button text="Generar"
+                            onAction="#onGenerarReporte"
+                            styleClass="nuevo-cliente-btn"/>
+                </VBox>
+            </HBox>
+
+            <!-- Rango de fechas -->
+            <HBox spacing="10">
+                <VBox spacing="5">
+                    <Label text="Fecha Inicio:"/>
+                    <DatePicker fx:id="fechaInicioPicker"
+                                promptText="yyyy-MM-dd"
+                                visible="false"
+                                disable="true"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Fecha Fin:"/>
+                    <DatePicker fx:id="fechaFinPicker"
+                                promptText="yyyy-MM-dd"
+                                visible="false"
+                                disable="true"/>
+                </VBox>
+            </HBox>
+
+            <!-- Cliente / Proveedor / Ciudad -->
+            <HBox spacing="10">
+                <VBox spacing="5">
+                    <Label text="Cliente:"/>
+                    <ComboBox fx:id="clienteCombo"
+                              promptText="Seleccione cliente"
+                              prefWidth="180"
+                              visible="false"
+                              disable="true"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Proveedor:"/>
+                    <ComboBox fx:id="proveedorCombo"
+                              promptText="Seleccione proveedor"
+                              prefWidth="180"
+                              visible="false"
+                              disable="true"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Ciudad:"/>
+                    <ComboBox fx:id="ciudadCombo"
+                              promptText="Seleccione ciudad"
+                              prefWidth="180"
+                              visible="false"
+                              disable="true"/>
+                </VBox>
+                <VBox spacing="5" alignment="BOTTOM_LEFT">
+                    <CheckBox fx:id="todasCiudadesCheck"
+                              text="Todas las ciudades"
+                              visible="false"
+                              disable="true"/>
+                </VBox>
+            </HBox>
+
+            <!-- Mensaje -->
+            <Label fx:id="mensajeLabel"
+                   visible="false"
+                   style="-fx-font-weight: bold;"/>
+
+            <!-- Tabla de resultados con estilo -->
+            <TableView fx:id="tablaReporte"
+                       prefWidth="780"
+                       prefHeight="500"
+                       styleClass="stock-table"/>
+        </VBox>
+    </children>
+</AnchorPane>

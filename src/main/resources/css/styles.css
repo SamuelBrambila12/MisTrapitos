@@ -1,0 +1,191 @@
+/* General */
+.root {
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-background-color: #f5f6fa;
+    -fx-font-size: 15px;
+}
+
+/* Fondo del login */
+.login-background {
+    -fx-background-color: linear-gradient(to bottom right, #2d3e50, #4a69bd);
+}
+
+/* Tarjeta de login */
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, 0, 10);
+}
+
+/* Título de la aplicación */
+.app-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3e50;
+}
+
+/* Título de login */
+.login-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4a69bd;
+}
+
+/* Contenedor de inputs */
+.input-container {
+    -fx-background-color: #f5f6fa;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: transparent;
+    -fx-padding: 5 10 5 10;
+    -fx-alignment: center-left;
+    -fx-spacing: 10;
+}
+
+/* Iconos de input */
+.input-icon {
+    -fx-font-size: 18px;
+    -fx-text-fill: #2d3e50;
+    -fx-padding: 0 0 0 5;
+}
+
+/* Campos de texto del login */
+.login-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8 12 8 0;
+    -fx-font-size: 15px;
+}
+
+/* Botón de login */
+.login-button {
+    -fx-background-color: #4a69bd;
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 12 24 12 24;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);
+    -fx-cursor: hand;
+    -fx-min-width: 200;
+}
+
+.login-button:hover {
+    -fx-background-color: #00b894;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 4);
+}
+
+.login-button:pressed {
+    -fx-background-color: #098c6c;
+}
+
+/* Etiqueta de error */
+.error-label {
+    -fx-text-fill: #d63031;
+    -fx-font-size: 14px;
+}
+
+/* Etiqueta de copyright */
+.copyright-label {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-opacity: 0.8;
+}
+
+/* Imagen del logo */
+.logo-image {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+/* Botones */
+.button {
+    -fx-background-color: #2d3e50;
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 24 8 24;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(44,62,80,0.10), 4,0,0,2);
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+}
+
+.button:hover {
+    -fx-background-color: #00b894;
+}
+
+.button:pressed {
+    -fx-background-color: #098c6c;
+}
+
+/* Campos de texto */
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-border-color: #2d3e50;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(44,62,80,0.04), 2,0,0,1);
+}
+
+/* Etiquetas */
+.label {
+    -fx-text-fill: #222f3e;
+    -fx-font-size: 15px;
+}
+
+/* Títulos */
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3e50;
+    -fx-padding: 0 0 16 0;
+}
+
+/* Paneles */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(44,62,80,0.10), 8,0,0,4);
+    -fx-padding: 24;
+}
+
+/* Tablas */
+.table-view {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: #dfe6e9;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(44,62,80,0.04), 2,0,0,1);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2d3e50;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: #2d3e50;
+}
+
+.table-view .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Barra de menú */
+.menu-bar {
+    -fx-background-color: #2d3e50;
+}
+
+.menu-bar .label {
+    -fx-text-fill: white;
+}
+
+/* Alertas */
+.alert {
+    -fx-background-color: white;
+    -fx-border-color: #d63031;
+    -fx-border-width: 2;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}

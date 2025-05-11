@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.collections.FXCollections?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mistrapitos.controllers.InventarioConsultaController" styleClass="root" stylesheets="/css/ventapanel.css">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16" style="-fx-background-color: #2d3e50; -fx-padding: 12;">
+            <children>
+                <Label text="Consulta de Inventario" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="cerrarBtn" text="Cerrar" onAction="#onCerrar" styleClass="logout-button"/>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <children>
+                <!-- Búsqueda por categoría -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <children>
+                        <Label text="Filtrar por categoría:" />
+                        <ComboBox fx:id="categoriasCombo" promptText="Todas las categorías" style="-fx-min-width: 200px;" onAction="#onFiltrarPorCategoria"/>
+
+                    </children>
+                </HBox>
+
+                <!-- Tabla de productos -->
+                <TabPane>
+                    <tabs>
+                        <!-- Pestaña de todos los productos -->
+                        <Tab text="Todos los productos" closable="false">
+                            <content>
+                                <VBox spacing="10">
+                                    <children>
+                                        <TableView fx:id="productosTable" VBox.vgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn text="ID" fx:id="colId"/>
+                                                <TableColumn text="Nombre" fx:id="colNombre"/>
+                                                <TableColumn text="Descripción" fx:id="colDescripcion"/>
+                                                <TableColumn text="Categoría" fx:id="colCategoria"/>
+                                                <TableColumn text="Precio" fx:id="colPrecio"/>
+                                                <TableColumn text="Stock" fx:id="colStock"/>
+                                                <TableColumn text="Descuento" fx:id="colDescuento"/>
+                                                <TableColumn text="Código de Barras" fx:id="colBarcode"/>
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </Tab>
+
+                        <!-- Pestaña de productos con poco stock -->
+                        <Tab text="Poco stock (≤ 5)" closable="false">
+                            <content>
+                                <VBox spacing="10">
+                                    <children>
+                                        <TableView fx:id="pocoStockTable" VBox.vgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn text="ID" fx:id="colIdPoco"/>
+                                                <TableColumn text="Nombre" fx:id="colNombrePoco"/>
+                                                <TableColumn text="Categoría" fx:id="colCategoriaPoco"/>
+                                                <TableColumn text="Stock" fx:id="colStockPoco"/>
+                                                <TableColumn text="Precio" fx:id="colPrecioPoco"/>
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </Tab>
+
+                        <!-- Pestaña de resumen por categoría -->
+                        <Tab text="Resumen por categoría" closable="false">
+                            <content>
+                                <VBox spacing="10">
+                                    <children>
+                                        <TableView fx:id="resumenTable" VBox.vgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn text="Categoría" fx:id="colCategoriaResumen"/>
+                                                <TableColumn text="Total Productos" fx:id="colTotalProductos"/>
+                                                <TableColumn text="Stock Total" fx:id="colStockTotal"/>
+                                                <TableColumn text="Valor Inventario" fx:id="colValorInventario"/>
+                                                <TableColumn text="Productos Bajo Stock" fx:id="colProductosBajoStock"/>
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+
+                <!-- Estadísticas rápidas -->
+                <HBox spacing="20" alignment="CENTER_LEFT" style="-fx-padding: 10; -fx-background-color: #f5f6fa; -fx-background-radius: 5;">
+                    <children>
+                        <VBox styleClass="stat-box">
+                            <children>
+                                <Label text="Total Productos" styleClass="stat-label"/>
+                                <Label fx:id="totalProductosLabel" text="0" styleClass="stat-value"/>
+                            </children>
+                        </VBox>
+                        <VBox styleClass="stat-box">
+                            <children>
+                                <Label text="Total Stock" styleClass="stat-label"/>
+                                <Label fx:id="totalStockLabel" text="0" styleClass="stat-value"/>
+                            </children>
+                        </VBox>
+                        <VBox styleClass="stat-box">
+                            <children>
+                                <Label text="Productos Bajo Stock" styleClass="stat-label"/>
+                                <Label fx:id="bajoStockLabel" text="0" styleClass="stat-value"/>
+                            </children>
+                        </VBox>
+                        <VBox styleClass="stat-box">
+                            <children>
+                                <Label text="Valor Total Inventario" styleClass="stat-label"/>
+                                <Label fx:id="valorInventarioLabel" text="\$0.00" styleClass="stat-value"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

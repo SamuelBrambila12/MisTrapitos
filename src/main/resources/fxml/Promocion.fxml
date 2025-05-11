@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mistrapitos.controllers.PromocionController" styleClass="root" stylesheets="/css/clientes.css">
+    <top>
+        <VBox spacing="6">
+            <children>
+                <HBox spacing="12" alignment="CENTER_LEFT" styleClass="card" style="-fx-padding: 12;">
+                    <children>
+                        <Label text="Gestión de Promociones" styleClass="title-label"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Nueva Promoción" onAction="#onNuevaPromocion" styleClass="nuevo-cliente-btn"/>
+                    </children>
+                </HBox>
+                <HBox spacing="8" alignment="CENTER_LEFT" style="-fx-padding: 0 0 8 12;">
+                    <children>
+                        <Label text="Buscar producto:" styleClass="search-label"/>
+                        <TextField fx:id="buscarField" promptText="Producto" styleClass="search-box"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tablaPromociones" prefHeight="400">
+            <columns>
+                <TableColumn text="ID Producto" prefWidth="120" fx:id="colIdProducto"/>
+                <TableColumn text="Producto" prefWidth="180" fx:id="colProducto"/>
+                <TableColumn text="Desc. Directo (%)" prefWidth="200" fx:id="colDescuentoDirecto"/>
+                <TableColumn text="Desc. Promoción (%)" prefWidth="200" fx:id="colDescuentoPromo"/>
+                <TableColumn text="Inicio Promoción" prefWidth="110" fx:id="colInicio"/>
+                <TableColumn text="Fin Promoción" prefWidth="110" fx:id="colFin"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

@@ -1,0 +1,279 @@
+/* Estilos para la vista de gestión de productos */
+
+/* Estilos generales */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #f0f5ff, #e6f0ff);
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Tarjeta del encabezado */
+.header-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 12, 0, 0, 6);
+    -fx-border-width: 1px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 12px;
+    -fx-padding: 12;
+}
+
+/* Título principal */
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3366cc;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.1), 1, 0, 1, 1);
+}
+
+/* Botón de Nuevo Producto */
+.nuevo-producto-btn {
+    -fx-background-color: linear-gradient(to bottom right, #4caf50, #45a049);
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(76,175,80,0.5), 6, 0, 0, 3);
+    -fx-border-width: 0;
+}
+
+.nuevo-producto-btn:hover {
+    -fx-background-color: linear-gradient(to bottom right, #45a049, #388e3c);
+    -fx-effect: dropshadow(three-pass-box, rgba(76,175,80,0.7), 8, 0, 0, 4);
+    -fx-translate-y: -1px;
+}
+
+.nuevo-producto-btn:pressed {
+    -fx-background-color: #388e3c;
+    -fx-translate-y: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(76,175,80,0.5), 3, 0, 0, 1);
+}
+
+/* Botón de Nueva Categoría con otro color (degradado rojizo) */
+.nueva-categoria-btn {
+    -fx-background-color: linear-gradient(to bottom right, #e91e63, #c2185b);
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(233,30,99,0.5), 6, 0, 0, 3);
+    -fx-border-width: 0;
+}
+
+.nueva-categoria-btn:hover {
+    -fx-background-color: linear-gradient(to bottom right, #c2185b, #ad1457);
+    -fx-effect: dropshadow(three-pass-box, rgba(233,30,99,0.7), 8, 0, 0, 4);
+    -fx-translate-y: -1px;
+}
+
+.nueva-categoria-btn:pressed {
+    -fx-background-color: #ad1457;
+    -fx-translate-y: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(233,30,99,0.5), 3, 0, 0, 1);
+}
+
+/* Etiqueta de búsqueda */
+.search-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #555555;
+}
+
+/* Campo de búsqueda */
+.search-box {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 20px;
+    -fx-padding: 8 16;
+    -fx-prompt-text-fill: #95a5a6;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 1);
+}
+
+.search-box:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.3), 8, 0, 0, 0);
+}
+
+/* Estilos para la tabla */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f1f5f9;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent #e2e8f0 #e2e8f0 transparent;
+    -fx-padding: 8px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+}
+
+.table-view .column-header .label {
+    -fx-alignment: center-left;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+    -fx-padding: 2px 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e0f2fe;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #bfdbfe;
+    -fx-text-fill: #1e3a8a;
+    -fx-table-cell-border-color: transparent;
+}
+
+/* Estilos específicos para celdas */
+.table-view .table-cell {
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 10 0 10;
+    -fx-border-color: transparent;
+}
+
+/* Estilos específicos para columnas particulares */
+.col-id {
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+}
+
+.col-precio {
+    -fx-text-fill: #c0392b;
+    -fx-font-weight: bold;
+}
+
+.col-stock {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}
+
+.col-descuento {
+    -fx-text-fill: #e67e22;
+    -fx-font-weight: bold;
+}
+
+/* Columna de acciones */
+.col-acciones {
+    -fx-alignment: CENTER;
+}
+
+/* Barra de desplazamiento vertical */
+.table-view .scroll-bar:vertical {
+    -fx-background-color: #f0f0f0;
+    -fx-pref-width: 12;
+    -fx-background-radius: 0 8px 8px 0;
+}
+
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 6px;
+}
+
+.table-view .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Barra de desplazamiento horizontal */
+.table-view .scroll-bar:horizontal {
+    -fx-background-color: #f0f0f0;
+    -fx-pref-height: 12;
+    -fx-background-radius: 0 0 8px 8px;
+}
+
+.table-view .scroll-bar:horizontal .thumb {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 6px;
+}
+
+.table-view .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #0fffb4;
+}
+
+/* Placeholder cuando la tabla está vacía */
+.table-view .placeholder {
+    -fx-background-color: white;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: #95a5a6;
+    -fx-font-size: 14px;
+}
+
+/* ==================== */
+/* Botones de acción: Editar y Eliminar */
+/* ==================== */
+
+/* Estilos base para botones de acción */
+.action-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 6px 10px;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* Botón de edición con diseño mejorado */
+.edit-button {
+    -fx-text-fill: #8e44ad;
+    -fx-graphic-text-gap: 6px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(142, 68, 173, 0.3);
+}
+
+.edit-button:hover {
+    -fx-background-color: rgba(142, 68, 173, 0.15);
+    -fx-effect: dropshadow(gaussian, rgba(142, 68, 173, 0.3), 8, 0, 0, 1);
+    -fx-border-color: rgba(142, 68, 173, 0.5);
+}
+
+.edit-button:pressed {
+    -fx-background-color: rgba(142, 68, 173, 0.25);
+    -fx-effect: innershadow(gaussian, rgba(142, 68, 173, 0.2), 2, 0, 0, 1);
+}
+
+/* Botón de eliminar con diseño mejorado (versión roja) */
+.delete-button {
+    -fx-text-fill: #dc2626;  /* Texto rojo */
+    -fx-graphic-text-gap: 6px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(220,38,38,0.3);
+}
+
+.delete-button:hover {
+    -fx-background-color: rgba(220,38,38,0.15);
+    -fx-effect: dropshadow(gaussian, rgba(220,38,38,0.3), 8, 0, 0, 1);
+    -fx-border-color: rgba(220,38,38,0.5);
+}
+
+.delete-button:pressed {
+    -fx-background-color: rgba(220,38,38,0.25);
+    -fx-effect: innershadow(gaussian, rgba(220,38,38,0.2), 2, 0, 0, 1);
+}
+

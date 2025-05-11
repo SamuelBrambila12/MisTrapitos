@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mistrapitos.controllers.VentaPanelController" styleClass="root" stylesheets="/css/ventapanel.css">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16" style="-fx-background-color: #2d3e50; -fx-padding: 12;">
+            <children>
+                <Label text="Panel de Ventas" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="consultarInventarioBtn" text="Consultar Inventario" onAction="#onConsultarInventario" styleClass="button"/>
+                <Button fx:id="agregarProductoBtn" text="Agregar Producto" onAction="#onAgregarProductoManual" styleClass="button"/>
+                <Button fx:id="editarProductoBtn" text="Editar Producto" onAction="#onEditarProducto" styleClass="button"/>
+                <Button fx:id="historialClienteBtn" text="Historial de Cliente" onAction="#onHistorialCliente" styleClass="button"/>
+                <Label fx:id="usuarioLabel" style="-fx-text-fill: white;"/>
+                <Button fx:id="logoutButton" text="Cerrar Sesión" onAction="#onLogout" styleClass="logout-button"/>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <StackPane>
+            <!-- Main content -->
+            <VBox spacing="18" alignment="TOP_CENTER" style="-fx-padding: 24;">
+                <children>
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <children>
+                            <TextField fx:id="barcodeField" promptText="Escanear o ingresar código de barras" style="-fx-min-width: 240px;"/>
+                            <Button text="Agregar" onAction="#onAgregarProducto" styleClass="button"/>
+                            <Label fx:id="productoInfoLabel" style="-fx-text-fill: #636e72;"/>
+                        </children>
+                    </HBox>
+                    <TableView fx:id="carritoTable" style="-fx-min-height: 220px;">
+                        <columns>
+                            <TableColumn text="Producto" fx:id="colProducto"/>
+                            <TableColumn text="Cantidad" fx:id="colCantidad"/>
+                            <TableColumn text="Precio Unitario" fx:id="colPrecio"/>
+                            <TableColumn text="Descuento" fx:id="colDescuento"/>
+                            <TableColumn text="Subtotal" fx:id="colSubtotal"/>
+                            <TableColumn text="Acciones" fx:id="colAcciones"/>
+                        </columns>
+                    </TableView>
+                    <VBox spacing="8" alignment="CENTER_RIGHT">
+                        <children>
+                            <HBox spacing="8" alignment="CENTER_RIGHT">
+                                <children>
+                                    <Label text="Buscar Cliente:"/>
+                                    <TextField fx:id="clienteField" promptText="Nombre o ID cliente" style="-fx-min-width: 180px;" onKeyReleased="#onBuscarCliente"/>
+                                    <Button text="Registrar nuevo cliente" onAction="#onRegistrarCliente" styleClass="button"/>
+                                </children>
+                            </HBox>
+                            <Label fx:id="clienteInfoLabel" style="-fx-text-fill: #636e72; -fx-font-size: 13px;"/>
+                            <HBox spacing="16" alignment="CENTER_RIGHT">
+                                <children>
+                                    <Label text="Método de pago:"/>
+                                    <ComboBox fx:id="metodoPagoCombo" promptText="Seleccionar método" style="-fx-min-width: 140px;"/>
+                                    <Label text="Total:"/>
+                                    <Label fx:id="totalLabel" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                                    <Button fx:id="completarVentaBtn" text="Completar Venta" onAction="#onCompletarVenta" styleClass="button"/>
+                                    <Button text="Imprimir Ticket" onAction="#onImprimirTicket" styleClass="button"/>
+                                </children>
+                            </HBox>
+                        </children>
+                    </VBox>
+                    <Label fx:id="mensajeLabel" style="-fx-text-fill: #d63031;"/>
+                </children>
+            </VBox>
+
+            <!-- Card Payment Animation Overlay -->
+            <StackPane fx:id="pagoTarjetaOverlay" visible="false" style="-fx-background-color: rgba(0, 0, 0, 0.7);">
+                <VBox alignment="CENTER" spacing="20" style="-fx-padding: 30; -fx-background-color: white; -fx-background-radius: 10; -fx-max-width: 400; -fx-max-height: 250;">
+                    <children>
+                        <Label fx:id="estadoTerminalLabel" text="Esperando respuesta de terminal..." style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <ProgressIndicator fx:id="terminalProgress" progress="-1.0"/>
+                        <Label fx:id="mensajeTerminalLabel" style="-fx-font-size: 14px;"/>
+                        <Button fx:id="cerrarTerminalBtn" text="Aceptar" onAction="#onCerrarTerminal" visible="false" styleClass="button"/>
+                    </children>
+                </VBox>
+            </StackPane>
+        </StackPane>
+    </center>
+
+    <!-- Nueva sección bottom con la imagen del logo centrada -->
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-padding: 15 0 20 0;">
+            <children>
+                <ImageView fx:id="logoImage" fitHeight="180" preserveRatio="true">
+                    <image>
+                        <Image url="@/images/logo.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
